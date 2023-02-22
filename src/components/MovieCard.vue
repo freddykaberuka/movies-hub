@@ -1,11 +1,11 @@
 <script setup></script>
 
 <template lang="">
-  <div class="grid max-w-sm overflow-hidden">
+  <div class="px-4">
     <div
       class="max-w-sm text-gray-50 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
     >
-      <img src="../assets/panther.jpeg" class="rounded-t-lg" alt="" />
+      <img src="../assets/panther.jpeg" class="rounded-t-lg w-full" alt="" />
       <b></b>
       <div class="py-5 px-2">
         <h5
