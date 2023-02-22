@@ -12,6 +12,6 @@ console.log(store.movies, "12");
 
 <template>
   <main>
-    <Movies :movies="store.movies[0].Title" />
+    <Movies :movies="store.movies" />
   </main>
 </template>

@@ -2,20 +2,35 @@
 import search from "./searchMovie.vue";
 </script>
 <template lang="">
-  <main>
+  <div class="header bg-stone-600 p-7 flex">
     <div>
-      <h1>MOvieSHub</h1>
+      <h1 class="text-3xl font-bold">MOvieSHub</h1>
     </div>
-    <div>
       <search />
-      <ul>
+    <div class="header-right">
+      <ul class="header-links">
         <li>Home</li>
         <li>Bookmarked</li>
       </ul>
     </div>
-  </main>
+  </div>
 </template>
 <script>
 export default {};
 </script>
-<style lang=""></style>
+<style>
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+.header-right {
+  display: flex;
+}
+.header-links {
+  display: flex;
+}
+.header-links li {
+  list-style: none;
+  padding-right: 10px;
+}
+</style>
