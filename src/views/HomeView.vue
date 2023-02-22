@@ -1,11 +1,17 @@
 <script setup>
+import { onMounted } from "vue";
 import Movies from "../components/MovieList.vue";
+import { moviesStore } from "../stores/movies";
+const store = moviesStore();
 
-// import Header from "../components/Header.vue";
+onMounted(() => {
+  store.getAllMovies();
+});
+console.log(store.movies, "12");
 </script>
 
 <template>
   <main>
-    <Movies />
+    <Movies :movies="store.movies[0].Title" />
   </main>
 </template>
