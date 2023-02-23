@@ -14,6 +14,12 @@ setTimeout(() => {
   totalPage = Math.ceil(store.totalResults / 10);
 }, 1000);
 
+const favMovies = ref(
+  localStorage.getItem("favMovies")
+    ? JSON.parse(localStorage.getItem("favMovies"))
+    : []
+);
+
 const handleScroll = (e) => {
   const element = scrollComponent.value;
   if (element) {
