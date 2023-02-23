@@ -61,7 +61,7 @@ export const moviesStore = defineStore("movies", {
         }
         this.isLoading = false;
         data.Search.forEach(movie => this.movies.push(movie));
-      } catch (error) {}
+      } catch (error) {''}
     },
   },
 });

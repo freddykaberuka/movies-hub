@@ -29,6 +29,7 @@ const handleScroll = (e) => {
 };
 
 onMounted(() => {
+  window.addEventListener("scroll", handleScroll);
   store.getAllMovies(keyword.value);
 });
 console.log(store.movies, "12");
