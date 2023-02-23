@@ -2,14 +2,12 @@
 import { onMounted, ref } from "vue";
 import Movies from "../components/MovieList.vue";
 import { moviesStore } from "../stores/movies";
-import isLoading from "../components/isLoading.vue";
+import IsLoading from "../components/isLoading.vue";
 
 const store = moviesStore();
 const scrollComponent = ref(null);
 const keyword = ref(
-  localStorage.getItem("keyword")
-    ? localStorage.getItem("keyword")
-    : "anaconda"
+  localStorage.getItem("keyword") ? localStorage.getItem("keyword") : ""
 );
 let totalPage = 0;
 setTimeout(() => {
@@ -37,7 +35,7 @@ console.log(store.movies, "12");
 
 <template>
   <main>
-     <article ref="scrollComponent">
+    <article ref="scrollComponent">
       <Movies :movies="store.movies" />
     </article>
     <IsLoading v-if="store.isLoading" />

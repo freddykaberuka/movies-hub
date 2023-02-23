@@ -50,18 +50,24 @@ export const moviesStore = defineStore("movies", {
       }
     },
     async nextPage(page) {
-      const keyword = localStorage.getItem("keyword") ? localStorage.getItem("keyword") : "anaconda";
+      const keyword = localStorage.getItem("keyword")
+        ? localStorage.getItem("keyword")
+        : "anaconda";
       this.isLoading = true;
       this.loadingMessage = "Please wait";
       try {
-        const { data } = await axios.get(`${API_URL}&s=${keyword}&page=${page}`);
+        const { data } = await axios.get(
+          `${API_URL}&s=${keyword}&page=${page}`
+        );
 
         if (data.Response == "False") {
           throw new Error(data.Error);
         }
         this.isLoading = false;
-        data.Search.forEach(movie => this.movies.push(movie));
-      } catch (error) {''}
+        data.Search.forEach((movie) => this.movies.push(movie));
+      } catch (error) {
+        ("");
+      }
     },
   },
 });

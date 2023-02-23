@@ -7,7 +7,7 @@ const props = defineProps({
 <template lang="">
   <div class="mt-7 flex flex-wrap justify-between gap-3">
     <div
-      class="w-2/5 my-2 lg:w-3/12"
+      class="w-2/5 my-2 md:w-1/4 lg:w-2/12"
       v-for="movie in movies"
       :key="movie.imdbID"
     >
