@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted } from "@vue";
+import { onMounted } from "vue";
 import Movies from "../components/MovieList.vue";
 import IsLoading from "../components/isLoading.vue";
 import { useFavoriteStore } from "../stores/favorites";

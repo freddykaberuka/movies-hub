@@ -41,7 +41,7 @@ console.log(store.movies, "12");
 
 <template>
   <main>
-    <article ref="scrollComponent">
+    <article ref="scrollComponent" class="m-4">
       <Movies :movies="store.movies" />
     </article>
     <IsLoading v-if="store.isLoading" />

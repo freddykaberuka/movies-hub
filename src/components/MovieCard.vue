@@ -29,41 +29,41 @@ const isFav = (imdbID) => {
 </script>
 
 <template lang="">
-  <div class="px-4">
-    <div
-      class="max-w-sm text-gray-50 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+  <div class="w-full h-58 rounded-md overflow-hidden bg-gray-50 lg:h-64">
+    <router-link
+      :to="{ name: 'detail', params: { id: movie.imdbID } }"
+      class="w-full h-full aspect-auto md:object-cover lg:aspect-auto"
     >
-      <router-link
-        :to="{ name: 'detail', params: { id: movie.imdbID } }"
-        class="w-full h-full"
-      >
-        <div v-if="movie.Poster != 'N/A'" class="w-full h-full">
-          <img
-            :src="movie.Poster"
-            :alt="movie.Title"
-            class="rounded-t-lg w-full"
-          />
-        </div>
-      </router-link>
-      <div class="py-5 px-2 flex justify-between">
-        <div>
-          <h5
-            :title="movie.Title"
-            class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-          >
-            {{ title }}
-          </h5>
-          <span>{{ movie.Year }}</span>
-        </div>
-        <div>
-          <button
-            class="cursor-pointer"
-            @click="toggleFav(movie.imdbID, $event)"
-          >
-            <HeartIcon :class="{ 'text-gray-600': isFav(movie.imdbID) }" />
-          </button>
-        </div>
+      <div v-if="movie.Poster != 'N/A'" class="w-full h-full">
+        <img
+          :src="movie.Poster"
+          :alt="movie.Title"
+          class="rounded-t-lg w-full"
+        />
       </div>
+
+      <div v-else>
+        <img
+          src="../assets/no-image.png"
+          class="w-full h-full object-cover"
+          :alt="movie.Title"
+        />
+      </div>
+    </router-link>
+  </div>
+  <div class="mt-4 w-full">
+    <div class="text-gray-900 flex items-center justify-between">
+      <router-link :to="{ name: 'detail', params: { id: movie.imdbID } }">
+        <h3 class="font-medium text-md tracking-wide" :title="movie.Title">
+          {{ title }}
+        </h3>
+      </router-link>
+      <button class="cursor-pointer" @click="toggleFav(movie.imdbID, $event)">
+        <HeartIcon :class="{ 'text-red-600': isFav(movie.imdbID) }" />
+      </button>
+    </div>
+    <div class="text-gray-200 flex mt-3 items-center font-medium text-sm">
+      {{ movie.Year }}
     </div>
   </div>
 </template>
