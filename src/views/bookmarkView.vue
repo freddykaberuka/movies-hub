@@ -15,7 +15,7 @@ onMounted(() => {
 });
 </script>
 <template>
-    <main>
+  <main>
     <h3 class="text-gray-500 text-xl tracking-widest">Your Favorite Movies</h3>
     <Movies :movies="store.favMovies" />
     <IsLoading v-if="filmsStore.isLoading" />

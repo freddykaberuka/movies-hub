@@ -14,12 +14,6 @@ setTimeout(() => {
   totalPage = Math.ceil(store.totalResults / 10);
 }, 1000);
 
-const favMovies = ref(
-  localStorage.getItem("favMovies")
-    ? JSON.parse(localStorage.getItem("favMovies"))
-    : []
-);
-
 const handleScroll = (e) => {
   const element = scrollComponent.value;
   if (element) {
@@ -36,7 +30,6 @@ onMounted(() => {
   window.addEventListener("scroll", handleScroll);
   store.getAllMovies(keyword.value);
 });
-console.log(store.movies, "12");
 </script>
 
 <template>

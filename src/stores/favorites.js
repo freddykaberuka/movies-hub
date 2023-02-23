@@ -12,7 +12,7 @@ export const useFavoriteStore = defineStore("favorite", {
   actions: {
     addToFavorite(id) {
       axios
-        .get(`${API_URL}&i=${id}`)
+        .get(`${API_URL}&id=${id}`)
         .then((res) => {
           const { data } = res;
           const movie = {

@@ -9,8 +9,8 @@ const props = defineProps({
 
 const title = props.movie.Title.substr(0, 15) + "...";
 const toggleFav = (id, e) => {
-  const cek = store.favMovies.filter((movie) => movie.imdbID == id);
-  if (cek.length > 0) {
+  const check = store.favMovies.filter((movie) => movie.imdbID == id);
+  if (check.length > 0) {
     store.removeFromFav(id);
     e.target.classList.remove("text-red-600");
   } else {

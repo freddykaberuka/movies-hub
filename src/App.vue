@@ -1,10 +1,15 @@
 <script setup>
 import Header from "./components/HeaderSection.vue";
-// import HomeView from "./views/HomeView.vue";
 </script>
 <template>
   <Header />
-  <router-view v-slot="{ Component }">
-    <component :is="Component" />
+  <router-view v-slot="{ Component, route }">
+    <transition
+      :enter-active-class="route.meta.enterClass"
+      :leave-active-class="route.meta.leaveClass"
+      mode="out-in"
+    >
+      <component :is="Component" />
+    </transition>
   </router-view>
 </template>

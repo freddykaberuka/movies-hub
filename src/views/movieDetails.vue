@@ -23,8 +23,8 @@ onMounted(() => {
   filmStore.getMovieByID(props.id);
 });
 const toggleFav = (id, e) => {
-  const cek = favStore.favMovies.filter((movie) => movie.imdbID == id);
-  if (cek.length > 0) {
+  const check = favStore.favMovies.filter((movie) => movie.imdbID == id);
+  if (check.length > 0) {
     favStore.removeFromFav(id);
     e.target.classList.remove("text-red-600");
   } else {
@@ -33,14 +33,13 @@ const toggleFav = (id, e) => {
   }
 };
 const handleTextFav = (imdbID) => {
-  const cek = favStore.favMovies.filter((movie) => movie.imdbID == imdbID);
-  return cek.length ? "Remove from Favorite" : "Add to Favorite";
+  const check = favStore.favMovies.filter((movie) => movie.imdbID == imdbID);
+  return check.length ? "Remove from Favorite" : "Add to Favorite";
 };
 const getClass = (imdbID) => {
-  const cek = favStore.favMovies.filter((movie) => movie.imdbID == imdbID);
-  return cek.length ? "text-red-600" : "text-gray-300";
+  const check = favStore.favMovies.filter((movie) => movie.imdbID == imdbID);
+  return check.length ? "text-red-600" : "text-gray-300";
 };
-
 </script>
 <template>
   <main>
@@ -71,22 +70,18 @@ const getClass = (imdbID) => {
           class="flex justify-between items-center flex-wrap gap-2 md:justify-start md:gap-14"
         >
           <div class="flex items-center text-gray-400 font-light text-sm">
-
             {{ filmStore.movie.Released }}
           </div>
 
           <div class="flex items-center text-gray-400 font-light text-sm">
-
             {{ filmStore.movie.Runtime }}
           </div>
 
           <div class="flex items-center text-gray-400 font-light text-sm">
-
             {{ filmStore.movie.Country }}
           </div>
         </div>
         <div class="flex items-center text-gray-400 font-light text-sm my-8">
-
           {{ filmStore.movie.imdbRating }} -
           {{ filmStore.movie.imdbVotes }} Votes
         </div>

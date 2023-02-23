@@ -40,13 +40,13 @@ export const moviesStore = defineStore("movies", {
     async getMovieByID(id) {
       this.isLoading = true;
       try {
-        const { data, status } = await axios.get(`${API_URL}&i=${id}`);
+        const { data, status } = await axios.get(`${API_URL}&id=${id}`);
         if (status != 200) {
           throw new Error(data.Error);
         }
         [this.movie, this.isLoading] = [data, false];
       } catch (err) {
-        console.log(err.message);
+        console.log(err.message, "test");
       }
     },
     async nextPage(page) {
