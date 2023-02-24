@@ -52,7 +52,7 @@ const isFav = (imdbID) => {
     </router-link>
   </div>
   <div class="mt-4 w-full">
-    <div class="text-gray-900 flex items-center justify-between">
+    <div class="text-gray-200 flex items-center justify-between">
       <router-link :to="{ name: 'detail', params: { id: movie.imdbID } }">
         <h3 class="font-medium text-md tracking-wide" :title="movie.Title">
           {{ title }}

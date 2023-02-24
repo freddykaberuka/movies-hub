@@ -44,9 +44,9 @@ const getClass = (imdbID) => {
 <template>
   <main>
     <IsLoading v-if="filmStore.isLoading" />
-    <article class="lg:flex lg:gap-5 lg:justify-between lg:items-center m-4">
+    <article class="lg:flex lg:gap-5 justify-center lg:items-center p-4">
       <div
-        class="w-full h-64 rounded-md overflow-hidden md:h-80 lg:w-6/12 lg:h-96"
+        class="w-full h-64 rounded-md overflow-hidden md:h-80 lg:w-3/12 lg:h-96"
       >
         <img
           :src="filmStore.movie.Poster"

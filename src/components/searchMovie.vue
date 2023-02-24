@@ -30,7 +30,7 @@ const handleSearch = () => {
 </script>
 <template lang="">
   <form @submit.prevent="handleSearch">
-    <div class="relative text-gray-300">
+    <div class="relative text-gray-300 w-full">
       <input
         type="text"
         placeholder="search movie here..."

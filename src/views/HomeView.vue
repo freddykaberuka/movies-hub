@@ -34,7 +34,7 @@ onMounted(() => {
 
 <template>
   <main>
-    <article ref="scrollComponent" class="m-4">
+    <article ref="scrollComponent" class="p-4">
       <Movies :movies="store.movies" />
     </article>
     <IsLoading v-if="store.isLoading" />

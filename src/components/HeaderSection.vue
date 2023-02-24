@@ -2,7 +2,7 @@
 import search from "./searchMovie.vue";
 </script>
 <template lang="">
-  <div class="header bg-stone-600 p-5 flex flex-wrap">
+  <div class="header bg-stone-800 p-4 bottom-1 flex flex-wrap">
     <div>
       <router-link to="/">
         <h1
