@@ -1,7 +1,8 @@
 import { defineStore } from "pinia";
 import axios from "axios";
 
-const API_URL = "http://www.omdbapi.com/?i=tt3896198&apikey=ace0bfb7";
+const API_URL = "http://www.omdbapi.com/";
+const API_KEY = "ace0bfb7";
 
 export const moviesStore = defineStore("movies", {
   state: () => {
@@ -23,7 +24,9 @@ export const moviesStore = defineStore("movies", {
       }
 
       try {
-        const { data } = await axios.get(`${API_URL}&s=${keyword}`);
+        const { data } = await axios.get(
+          `${API_URL}?apikey=${API_KEY}&s=${keyword}`
+        );
         if (data.Response == "False") {
           throw new Error(data.Error);
         }
@@ -40,7 +43,9 @@ export const moviesStore = defineStore("movies", {
     async getMovieByID(id) {
       this.isLoading = true;
       try {
-        const { data, status } = await axios.get(`${API_URL}&id=${id}`);
+        const { data, status } = await axios.get(
+          `${API_URL}?apikey=${API_KEY}&i=${id}`
+        );
         if (status != 200) {
           throw new Error(data.Error);
         }
@@ -57,7 +62,7 @@ export const moviesStore = defineStore("movies", {
       this.loadingMessage = "Please wait";
       try {
         const { data } = await axios.get(
-          `${API_URL}&s=${keyword}&page=${page}`
+          `${API_URL}?apikey=${API_KEY}&s=${keyword}&page=${page}`
         );
 
         if (data.Response == "False") {
